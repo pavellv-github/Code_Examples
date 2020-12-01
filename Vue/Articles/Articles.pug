@@ -1,0 +1,3 @@
+.articles
+  .articles__container(ref= 'container')
+    ArticleItem(v-for="news__item in items", :key="news__item.id", :item="news__item", ref= 'newsItems')

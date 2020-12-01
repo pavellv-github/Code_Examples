@@ -1,0 +1,5 @@
+.baseSwitchCase
+  label.baseSwitchCase__label(:class="{'baseSwitchCase__label--checked':value}")
+    input.baseSwitchCase__field(type='checkbox', @change="toggle", :name="textRight + '_' + textLeft")
+  button.baseSwitchCase__text(@click="change(true)", aria-label="textRight", type="button") {{ textRight }}
+  button.baseSwitchCase__text(@click="change(false)", aria-label="textLeft", type="button") {{ textLeft }}

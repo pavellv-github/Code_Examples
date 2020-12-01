@@ -1,0 +1,131 @@
+.caseSolution {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-top: -20px;
+  background: #1a193a;
+  overflow: hidden;
+
+  &__line {
+    position: relative;
+    width: 1248px;
+    height: 1142px;
+    display: block;
+    margin: 0 auto;
+
+    @include mq("desktop", "desktop-small") {
+      width: 962px;
+      height: 869px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      width: 762px;
+      height: 688px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      width: 585px;
+      height: 528px;
+    }
+
+    @include mq("tablet-small", "phone") {
+      width: 340px;
+      height: 353px;
+    }
+
+    @include mq("phone") {
+      width: 286px;
+      height: 297px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        transition: stroke-dashoffset 1s linear;
+      }
+    }
+  }
+
+  &__lineText {
+    position: absolute;
+    top: 227px;
+    font-weight: 300;
+    left: 0;
+    font-size: 120px;
+    line-height: 1;
+    color: $white;
+    letter-spacing: -0.01em;
+    text-align: center;
+    width: 100%;
+    transition: transform 0.6s linear;
+
+    @include mq("desktop", "desktop-small") {
+      top: 155px;
+      font-size: 92px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      top: 115px;
+      font-size: 72px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      top: 90px;
+      font-size: 54px;
+    }
+
+    @include mq("tablet-small") {
+      top: 75px;
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 48px;
+    letter-spacing: -0.01em;
+    color: $violet_4;
+    margin-left: auto;
+    max-width: 1062px;
+    text-align: right;
+    margin-right: 210px;
+    margin-top: 30px;
+
+    @include mq("desktop", "desktop-small") {
+      max-width: 830px;
+      font-size: 22px;
+      line-height: 36px;
+      margin-right: 135px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      max-width: 660px;
+      font-size: 18px;
+      line-height: 30px;
+      margin-right: 97px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      max-width: 626px;
+      font-size: 20px;
+      line-height: 32px;
+      margin-right: 71px;
+    }
+
+    @include mq("tablet-small") {
+      max-width: 95%;
+      font-size: 16px;
+      line-height: 26px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    p + p {
+      margin-top: 20px;
+    }
+  }
+}

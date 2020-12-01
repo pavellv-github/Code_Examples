@@ -1,0 +1,15 @@
+label.baseCheckbox(:class="{'baseCheckbox--error': errors.has(name) }",)
+  input.baseCheckbox__field(
+    :type="type"
+    :name="name"
+    :checked="isChecked"
+    :disabled="disabled"
+    v-validate="validate",
+    @change="onChange"
+  )
+
+  span.baseCheckbox__custom
+    svg.baseCheckbox__icon
+      use(xlink:href= '/assets/inputSprite.svg#icon-check')
+  span.baseCheckbox__text
+    slot

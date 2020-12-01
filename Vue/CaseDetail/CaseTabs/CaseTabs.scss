@@ -1,0 +1,167 @@
+.caseTabs {
+  display: block;
+  width: auto;
+  min-width: 100%;
+
+  &__container {
+    display: flex;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__header {
+    display: inline-flex;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(317.7deg, $grey_4 0%, $black 105.18%), $grey_5;
+    background-blend-mode: soft-light, normal;
+    box-shadow: -3px -3px 5px $blue_3, 3px 3px 7px $white, inset 2px 2px 5px $blue_4;
+    border-radius: 40px;
+
+    @include mq("tablet") {
+      overflow-x: auto;
+    }
+
+    @include mq("tablet-small") {
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &__selectBlock {
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition: width 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(317.7deg, $white 0%, $black 105.18%), $grey_34;
+    background-blend-mode: soft-light, normal;
+    box-shadow: 5px 5px 10px $blue_2, inset -5px -5px 7px $blue_5, inset 5px 5px 7px $grey_18;
+    border-radius: 40px;
+    z-index: 1;
+
+    @include mq("tablet-small") {
+      display: none;
+    }
+  }
+
+  &__body {
+    position: relative;
+    margin-top: 77px;
+
+    @include mq("desktop", "desktop-small") {
+      margin-top: 60px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      margin-top: 70px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      margin-top: 50px;
+    }
+
+    @include mq("tablet-small", "phone") {
+      margin-top: 36px;
+    }
+
+    @include mq("phone") {
+      margin-top: 30px;
+    }
+  }
+
+  #{&}__button {
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    transform: translate(0, 0);
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    padding: 0;
+
+    @include mq("desktop", "desktop-small") {
+      height: 48px;
+    }
+
+    @include mq("desktop-small", "tablet-small") {
+      height: 40px;
+    }
+
+    @include mq("tablet-small") {
+      height: 48px;
+      margin-left: 5px;
+      margin-right: 5px;
+      background: linear-gradient(317.7deg, $white 0%, $black 105.18%), $blue;
+      background-blend-mode: soft-light, normal;
+      box-shadow: 2px 2px 5px $blue_2, -2px -2px 4px $white inset -2px -2px 4px $blue_5, inset 2px 2px 3px $white;
+      border-radius: 40px;
+      padding: 0 28px;
+    }
+
+    @include mq("phone") {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    span {
+      color: $violet_9;
+      font: 300 18px/1em "Manrope", sans-serif;
+      transition: opacity 0.3s ease, color 0.3s ease;
+      backface-visibility: hidden;
+      letter-spacing: -0.01em;
+      z-index: 2;
+      padding: 0 22px;
+
+      @include mq("desktop", "desktop-small") {
+        font-size: 16px;
+      }
+
+      @include mq("desktop-small", "tablet") {
+        font-size: 14px;
+      }
+
+      @include mq("tablet", "tablet-small") {
+        font-size: 14px;
+      }
+
+      @include mq("tablet-small") {
+        font-size: 14px;
+        color: $black_8;
+        padding: 0;
+      }
+    }
+
+    &--active {
+      cursor: default;
+
+      @include mq("tablet-small") {
+        background: linear-gradient(317.7deg, $grey_4 0%, $black 105.18%), $grey_5;
+        background-blend-mode: soft-light, normal;
+        box-shadow: -3px -3px 5px $blue_3, 3px 3px 7px $white, inset 2px 2px 5px $blue_4;
+      }
+
+      span {
+        color: $violet_9;
+        opacity: 1;
+      }
+
+      @include hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--disable & {
+    &__header {
+      display: none;
+    }
+  }
+}

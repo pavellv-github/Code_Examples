@@ -1,0 +1,18 @@
+.baseTabs(:class="{'baseTabs--disable' : !isActive}", ref="tabs")
+  .baseTabs__container
+    slot(name="header")
+    .baseTabs__header(
+      v-show="isActive",
+      ref="header",
+      @mousedown="mouseDown")
+      button.baseTabs__button(
+        ref= 'button',
+        v-for= 'item in items',
+        :key= 'item.name',
+        @click= 'onClick(item.name, $event)',
+        :data-name= '`#${item.name}`'
+        :class= '{"baseTabs__button--active": item.name === activeName}')
+          span(v-html= 'item.title')
+      .baseTabs__line(ref= 'line')
+  .baseTabs__body
+    slot

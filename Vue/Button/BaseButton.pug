@@ -1,0 +1,9 @@
+a.baseButton(v-if= 'href !== undefined', :href= 'href', :class="{ 'baseButton--transparent' : isTransparent }", :target="target", :rel="rel")
+  slot
+nuxt-link.baseButton(v-else-if= 'to !== undefined', :to= 'to', :class="{ 'baseButton--transparent' : isTransparent }")
+  slot
+button.baseButton(v-else, :class="{ 'baseButton--transparent' : isTransparent, 'baseButton--arrow' : showArrow, 'baseButton--load' : loading }")
+  svg.baseButton__icon(v-if= 'showArrow')
+    use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-down`")
+  i.baseButton__preloader(v-if= 'loading')
+  slot

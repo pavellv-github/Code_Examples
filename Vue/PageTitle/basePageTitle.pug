@@ -1,0 +1,5 @@
+mixin basePageTitle(obj, tag_)
+  - const tag = tag_ === null ? 'h1' : tag_
+
+  .basePageTitle(class=obj.class)
+    #{tag}.textH2.basePageTitle__text!=obj.title

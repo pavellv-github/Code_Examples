@@ -1,0 +1,89 @@
+.baseSocialButtons {
+  &__buttons {
+    display: flex;
+  }
+
+  &__button {
+    margin-right: 43px;
+
+    @include mq("desktop-wide", "desktop") {
+      margin-right: 20px;
+    }
+
+    @include mq("desktop", "tablet-wide") {
+      margin-right: 23.5px;
+    }
+
+    @include mq("tablet-wide", "tablet") {
+      margin-right: 20.5px;
+    }
+
+    @include mq("tablet", "phone-wide") {
+      margin-right: 17px;
+    }
+
+    @include mq("phone-wide", "phone") {
+      margin-right: 18px;
+    }
+
+    @include mq("phone") {
+      margin-right: 9.5px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__svg {
+    color: rgba(256, 256, 256, 1);
+    height: 85px;
+    width: 287px;
+    transition: color ease-in 0.2s, transform ease-in 0.1s;
+
+    @include mq("desktop-wide", "desktop") {
+      height: 65px;
+      width: 219px;
+    }
+
+    @include mq("desktop", "tablet-wide") {
+      height: 55px;
+      width: 185px;
+    }
+
+    @include mq("tablet-wide", "tablet") {
+      height: 50px;
+      width: 168px;
+    }
+
+    @include mq("tablet", "phone-wide") {
+      height: 60px;
+      width: 203px;
+    }
+
+    @include mq("phone-wide", "phone") {
+      height: 58px;
+      width: 196px;
+    }
+
+    @include mq("phone") {
+      height: 39px;
+      width: 131px;
+    }
+
+    &:active {
+      color: rgba(256, 256, 256, 0.85);
+      transform: scale(0.95);
+    }
+
+    &:hover {
+      color: rgba(256, 256, 256, 0.6);
+    }
+  }
+
+  &--opacity {
+    .baseSocialButtons__button {
+      opacity: 0;
+    }
+  }
+}

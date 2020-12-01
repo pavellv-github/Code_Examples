@@ -1,0 +1,9 @@
+section.caseTeam
+  h2.caseTeam__title(v-html="title")
+  p.caseTeam__subtitle(v-html="subtitle")
+
+  .caseTeam__items
+    .caseTeam__item(v-for="item in items", :key="item.id")
+      .caseTeam__itemName {{ item.name }}
+      .caseTeam__itemPosition {{ item.position }}
+      MorphBubble.caseTeam__itemBubble

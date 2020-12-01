@@ -1,0 +1,212 @@
+.baseFooter {
+  display: block;
+  width: 100%;
+  background: #202224;
+
+  &__level {
+    padding-left: 245px;
+    padding-right: 230px;
+    display: flex;
+    align-items: center;
+
+    @include mq("desktop", "desktop-small") {
+      padding-left: 174px;
+      padding-right: 174px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      padding-left: 133px;
+      padding-right: 133px;
+    }
+
+    @include mq("tablet", "phone") {
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+
+    @include mq("phone") {
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+
+    &--first {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 57px;
+      padding-bottom: 38px;
+
+      @include mq("desktop-small", "tablet") {
+        padding-top: 42px;
+        padding-bottom: 32px;
+      }
+
+      @include mq("tablet") {
+        display: none;
+      }
+    }
+
+    &--last {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top: 1px solid #394147;
+
+      @include mq("desktop", "desktop-small") {
+        padding-top: 12px;
+      }
+
+      @include mq("desktop-small", "tablet") {
+        padding-top: 20px;
+      }
+
+      @include mq("tablet", "phone") {
+        padding-top: 28px;
+        padding-bottom: 30px;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      @include mq("phone") {
+        padding-top: 20px;
+        padding-bottom: 17px;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__menu {
+    width: auto;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  &__menuLink {
+    font: 400 22px/26px "PFDinTextCondPro", sans-serif;
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 37px;
+    transition: opacity 0.2s ease;
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    @include mq("desktop-small") {
+      font-size: 14px;
+      line-height: 17px;
+      margin-right: 18px;
+    }
+
+    @include hover {
+      opacity: 0.5;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__info {
+    margin-left: auto;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+
+    @include mq("desktop", "desktop-small") {
+      width: 41%;
+    }
+
+    @include mq("desktop-small") {
+      width: 38%;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 43px;
+
+    @include mq("desktop", "desktop-small") {
+      margin-right: 38px;
+    }
+
+    @include mq("desktop-small") {
+      margin-right: 29px;
+    }
+
+    @include hover {
+      .baseFooter__socialItem {
+        opacity: 0.35;
+      }
+    }
+  }
+
+  &__socialItem {
+    color: #5a6166;
+    padding: 0 14px;
+    transition: opacity 0.2s ease;
+
+    @include mq("desktop", "desktop-small") {
+      padding: 0 10px;
+    }
+
+    @include mq("desktop-small") {
+      padding: 0 6px;
+    }
+
+    svg {
+      display: block;
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      font-family: 'object-fit: contain; object-position: center;'; //stylelint-disable-line
+
+      @include mq("desktop-small") {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include hover {
+      opacity: 1 !important;
+    }
+  }
+
+  &__logotype {
+    img {
+      width: 269px;
+
+      @include mq("desktop") {
+        width: 189px;
+      }
+    }
+  }
+
+  &__text {
+    font: 400 14px/28px "Arial", sans-serif;
+    color: #606871;
+
+    @include mq("desktop", "phone") {
+      font-size: 12px;
+      line-height: 28px;
+    }
+
+    @include mq("phone") {
+      font-size: 10px;
+      line-height: 28px;
+    }
+
+    a {
+      color: #606871;
+      text-decoration: underline;
+    }
+  }
+}

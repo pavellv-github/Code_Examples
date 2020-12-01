@@ -1,0 +1,6 @@
+.sliderTickets
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide(v-for="ads__item in items", :key="ads__item.id")
+        AdsItem(:item="ads__item", ref= 'adsItem')
+    .swiper-pagination

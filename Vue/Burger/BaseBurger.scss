@@ -1,0 +1,57 @@
+@import "~/assets/styles/settings.scss";
+
+.baseBurger {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 57px;
+  height: 100%;
+  display: none;
+
+  @include mq("tablet", "phone") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  @include mq("phone") {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 5px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 25px;
+    height: 15px;
+
+    @include mq("phone") {
+      display: flex;
+      flex-direction: column;
+      width: 25px;
+      height: 10px;
+    }
+
+    svg {
+      width: 23px;
+      height: 2px;
+      min-height: 2px;
+      margin-bottom: 5px;
+      fill: $grey;
+      stroke: $grey;
+
+      @include mq("phone") {
+        height: 2px;
+        min-height: 2px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

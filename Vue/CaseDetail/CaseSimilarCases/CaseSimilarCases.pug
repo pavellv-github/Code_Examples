@@ -1,0 +1,7 @@
+.caseSimilarCases
+  h2.caseSimilarCases__title текст
+  p.caseSimilarCases__subtitle текст
+  .caseSimilarCases__slider
+    BaseSlider(:items="cases")
+      .swiper-slide.baseSlider__slide(ref="slide", v-for="(item, index) in cases", :key="index")
+        WorkCard(:to="item.preview_link", :image="item.picture", :label="item.company.title", :description="item.short_description", :date="item.created_at")

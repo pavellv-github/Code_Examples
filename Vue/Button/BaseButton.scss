@@ -1,0 +1,134 @@
+.baseButton {
+  appearance: none;
+  border: 1.5px solid #000;
+  height: 52px;
+  white-space: nowrap;
+  min-width: 160px;
+  border-radius: 26px;
+  background-color: #000;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #fff;
+  padding: 0 15px;
+  font: 400 16px/49px "PFDinTextCondPro", sans-serif;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.3s ease;
+
+  @include mq("desktop", "desktop-small") {
+    height: 50px;
+    line-height: 47px;
+  }
+
+  @include mq("desktop-small", "tablet") {
+    height: 48px;
+    line-height: 45px;
+  }
+
+  @include mq("tablet", "phone") {
+    height: 50px;
+    line-height: 47px;
+  }
+
+  @include mq("phone") {
+    height: 44px;
+    line-height: 41px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1.5px;
+    right: -1.5px;
+    left: -1.5px;
+    bottom: -1.5px;
+    background-color: #4d4d4d;
+    opacity: 0;
+    z-index: -1;
+    border-radius: inherit;
+    transition: opacity 0.3s ease;
+  }
+
+  @include hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: #101010;
+
+    &::before {
+      background-color: #000;
+    }
+
+    @include hover {
+      color: white;
+    }
+  }
+
+  &__icon {
+    width: 15px;
+    height: 7px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24px;
+    stroke: #fff;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  &__preloader {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #444;
+    border-bottom-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: spin 0.75s infinite linear;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  &--arrow {
+    display: flex;
+    flex-direction: row;
+    padding-left: 29px;
+
+    .baseButton__icon {
+      display: block;
+    }
+  }
+
+  &--load {
+    color: #000;
+    pointer-events: none;
+    user-select: none;
+
+    .baseButton__icon {
+      opacity: 0;
+    }
+
+    .baseButton__preloader {
+      opacity: 1;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

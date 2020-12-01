@@ -1,0 +1,22 @@
+.blockEvent
+  nuxt-link.blockEvent__link(:to="to", :aria-label="title")
+  .blockEvent__place
+    .blockEvent__wrapper
+      div
+        p.blockEvent__number {{ day }}
+        p.blockEvent__month {{ month }}
+      .blockEvent__location
+        .blockEvent__locationItem.blockEvent__locationItem--geo
+          svg
+            use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-geo`")
+          p {{ position_address }}
+        .blockEvent__locationItem
+          svg
+            use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-clock`")
+          p {{ time }}
+    p.blockEvent__city {{ city }}
+
+  .blockEvent__content
+    VClamp.h8.blockEvent__title(tag="h3", autoresize, :max-lines="2") {{ title }}
+    VClamp.text.blockEvent__description(tag="p", autoresize, :max-lines="2") {{ anons }}
+    p.blockEvent__subscribe Участвовать

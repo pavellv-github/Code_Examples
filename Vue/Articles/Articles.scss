@@ -1,0 +1,132 @@
+@import "~/assets/styles/settings.scss";
+
+.articles {
+  width: 100%;
+  margin-bottom: 80px;
+  overflow: hidden;
+
+  @include mq("desktop-wide", "desktop") {
+    margin-bottom: 30px;
+  }
+
+  @include mq("desktop", "tablet-wide") {
+    margin-bottom: 65px;
+  }
+
+  @include mq("tablet-wide", "tablet") {
+    margin-bottom: 40px;
+  }
+
+  @include mq("tablet", "phone-wide") {
+    margin-bottom: 60px;
+  }
+
+  @include mq("phone-wide", "phone") {
+    margin-bottom: 60px;
+  }
+
+  @include mq("phone") {
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &--treeItems {
+    .articleItem {
+      width: 32%;
+      margin-right: 2%;
+
+      &:nth-of-type(3n+3) {
+        margin-right: 0;
+      }
+
+      @include mq("desktop-wide", "desktop") {
+        width: 32%;
+      }
+
+      @include mq("desktop", "tablet-wide") {
+        width: 32%;
+      }
+
+      @include mq("tablet-wide", "tablet") {
+        width: 48%;
+
+        &:nth-of-type(3n+3) {
+          margin-right: 2%;
+        }
+      }
+
+      @include mq("tablet", "phone") {
+        width: 47%;
+
+        &:nth-of-type(3n+3) {
+          margin-right: 2%;
+        }
+      }
+
+      @include mq("phone") {
+        width: 100%;
+      }
+    }
+  }
+
+  &--twoItems {
+    .articleItem {
+      width: 48%;
+      margin-right: 2%;
+
+      &:nth-of-type(3n+2) {
+        margin-right: 2%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include mq("tablet-wide", "phone") {
+        &:nth-of-type(3n+3) {
+          margin-right: 2%;
+        }
+      }
+
+      @include mq("phone-wide", "phone") {
+        width: 48%;
+      }
+
+      @include mq("phone") {
+        width: 100%;
+      }
+    }
+  }
+
+  &--small {
+    .articleItem {
+      .articleItem__title {
+        @include mq("tablet-wide", "phone-wide") {
+          font-size: 16px;
+        }
+      }
+
+      .articleItem__date {
+        @include mq("tablet-wide", "phone-wide") {
+          font-size: 14px;
+        }
+      }
+
+      .articleItem__announText {
+        @include mq("tablet-wide", "phone-wide") {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &--noButton {
+    .btnDownload {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.buttonIcon {
+  &--video {
+    height: 85px;
+    max-width: 348px;
+    border-radius: 10px;
+    margin-top: 78px;
+    padding-left: 36px;
+    padding-right: 36px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    outline: none;
+    background: linear-gradient(to bottom, #9e8df4, #9786ee, #917fe8, #8a79e3, #8372dd);
+    position: relative;
+    transition: transform 0.2s ease;
+
+    @include mq("desktop-wide", "desktop") {
+      max-width: 295px;
+      height: 62px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    @include mq("desktop", "tablet-wide") {
+      max-width: 234px;
+      height: 55px;
+      padding-left: 23px;
+      padding-right: 23px;
+      margin-top: 55px;
+    }
+
+    @include mq("tablet-wide", "tablet") {
+      max-width: 244px;
+      height: 50px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-top: 52px;
+    }
+
+    @include mq("tablet", "phone") {
+      max-width: 244px;
+      height: 60px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-top: 48px;
+    }
+
+    @include mq("phone-wide", "phone") {
+      margin-top: 45px;
+    }
+
+    @include mq("phone") {
+      max-width: 203px;
+      height: 39px;
+      margin-top: 38px;
+      padding-left: 17px;
+      padding-right: 21px;
+    }
+
+    .buttonIcon__text {
+      color: $white;
+      font: 500 21px/1em "Gotham Pro", sans-serif;
+      letter-spacing: -0.05em;
+      position: relative;
+      z-index: 1;
+
+      @include mq("desktop-wide", "desktop") {
+        font-size: 18px;
+      }
+
+      @include mq("desktop", "tablet-wide") {
+        font-size: 14px;
+      }
+
+      @include mq("tablet-wide", "phone") {
+        font-size: 16px;
+      }
+
+      @include mq("phone") {
+        font-size: 13px;
+      }
+    }
+
+    .buttonIcon__icon {
+      width: 53px;
+      height: 53px;
+      fill: $white;
+      z-index: 1;
+
+      @include mq("desktop-wide", "desktop") {
+        width: 44px;
+        height: 44px;
+      }
+
+      @include mq("desktop", "tablet-wide") {
+        width: 36px;
+        height: 36px;
+      }
+
+      @include mq("tablet-wide", "phone") {
+        width: 31px;
+        height: 31px;
+      }
+
+      @include mq("phone") {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      text-decoration: none;
+      background: linear-gradient(to bottom, #b4bbfb, #afb4fb, #abadfa, #a7a6f9);
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

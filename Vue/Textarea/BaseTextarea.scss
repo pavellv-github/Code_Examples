@@ -1,0 +1,198 @@
+.baseTextarea {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 121px;
+  border: 1.5px solid #d5dfe8;
+
+  &__label {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      font: 400 15px/1 "Arial", sans-serif;
+      color: rgba(#101010, 0.5);
+      pointer-events: none;
+      letter-spacing: 0.01em;
+      transform: translate(0, 13px);
+      transition: transform 0.3s ease;
+      will-change: transform;
+    }
+  }
+
+  &__body {
+    padding: 30px 1px 1px 17px;
+    height: 100%;
+    position: relative;
+    overflow: visible;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      top: 28px;
+      left: 0;
+      background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .vb-content {
+      max-height: 100%;
+      box-sizing: border-box !important;
+    }
+
+    .vb-dragger {
+      width: 2px;
+      background: #d5dfe7;
+      right: 0;
+    }
+  }
+
+  &.height-enter-active,
+  &.height-leave-active {
+    transition: max-height 0.6s ease-in-out;
+    overflow: hidden;
+  }
+
+  &.height-enter,
+  &.height-leave-to {
+    max-height: 0;
+  }
+
+  &__field {
+    font: 400 15px/1em "Arial", sans-serif;
+    appearance: none;
+    width: 100%;
+    display: block;
+    height: 100%;
+    letter-spacing: -0.01em;
+    color: #101010;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    resize: none;
+    border: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::placeholder {
+      opacity: 1;
+    }
+
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__tip {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    width: 40px;
+    visibility: hidden;
+    z-index: 20;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s ease 0.3s;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      margin-top: -11.5px;
+      width: 23px;
+      height: 23px;
+      right: 17px;
+    }
+
+    &:hover {
+      & + .baseTextarea__tipMessage {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__tipMessage {
+    background-color: white;
+    border: 1px solid #ececec;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.13);
+    position: absolute;
+    right: 17px;
+    display: inline-block;
+    max-width: 100%;
+    bottom: 88%;
+    font: 400 15px/20px "Arial", sans-serif;
+    color: #0b0d12;
+    padding: 17px 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s ease 0.3s;
+    z-index: 30;
+    text-align: right;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      right: 6px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: #fff transparent transparent transparent;
+      z-index: 3;
+    }
+  }
+
+  &--error {
+    color: red;
+    border-color: red;
+
+    .baseTextarea__tip {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
+    }
+  }
+
+  &--focus {
+    .baseTextarea__label span {
+      transform: translate(-12px, 5px) scale(0.8);
+    }
+  }
+
+  &--blur {
+    .baseTextarea__body::before {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .vb-dragger {
+      opacity: 1;
+    }
+  }
+
+  .lt-mirror__wrapper {
+    height: 121px !important;
+  }
+}

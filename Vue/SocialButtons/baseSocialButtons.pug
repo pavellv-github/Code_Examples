@@ -1,0 +1,6 @@
+.baseSocialButtons
+  .baseSocialButtons__buttons(:class="{'col-12 col-lg-9 pl-0 pr-0': isGrid }")
+    a.baseSocialButtons__button(href= '#', ref='google', aria-label= 'google play', target='_blank', rel='noopener noreferrer nofollow')
+      svg.baseSocialButtons__svg(v-svg, symbol="google")
+    a.baseSocialButtons__button(href= '#', ref='app', aria-label= 'App Store', target='_blank', rel='noopener noreferrer nofollow')
+      svg.baseSocialButtons__svg.baseSocialButtons__svg--app(v-svg, symbol="app")

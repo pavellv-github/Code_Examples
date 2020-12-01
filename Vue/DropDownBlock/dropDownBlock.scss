@@ -1,0 +1,374 @@
+@import "../common/options";
+
+.dropDownBlock {
+  margin-bottom: 80px;
+
+  @include mq("desktop-wide", "desktop") {
+    margin-bottom: 46px;
+  }
+
+  @include mq("desktop", "tablet-wide") {
+    margin-bottom: 40px;
+  }
+
+  @include mq("tablet-wide", "tablet") {
+    margin-bottom: 14px;
+  }
+
+  @include mq("tablet", "phone") {
+    margin-bottom: 18px;
+  }
+
+  @include mq("phone") {
+    margin-bottom: 24px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+
+    &::after {
+      content: "";
+      background-image: url("/content/arrow_down.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      transform: rotate(0deg);
+      position: absolute;
+      top: 0.5em;
+      right: 0;
+      width: 23px;
+      height: 11px;
+      transition: transform 0.3s linear;
+      cursor: pointer;
+
+      @include mq("desktop-wide", "desktop") {
+        width: 15px;
+        height: 8px;
+      }
+
+      @include mq("desktop", "phone") {
+        width: 12px;
+        height: 7px;
+      }
+
+      @include mq("phone") {
+        width: 12px;
+        height: 7px;
+      }
+    }
+
+    @include theme () {
+      &::after {
+        background-image: url("/content/arrow_down-vip.png");
+      }
+    }
+
+    &--no-margin {
+      margin-bottom: 0;
+    }
+
+    &--margin {
+      margin-top: 100px;
+    }
+  }
+
+  &__text {
+    max-height: 100%;
+    margin-top: 46px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    width: 15px;
+    height: 8px;
+    transform: rotate(0deg);
+    stroke: $color-light-accent;
+    transition: transform 0.3s linear;
+    cursor: pointer;
+  }
+
+  &__content {
+    display: none;
+    width: 100%;
+    margin-top: 1em;
+
+    .table,
+    .table {
+      margin-top: 80px;
+
+      @include mq("desktop-wide", "desktop") {
+        margin-top: 74px;
+      }
+
+      @include mq("desktop", "tablet-wide") {
+        margin-top: 56px;
+      }
+
+      @include mq("tablet-wide", "phone") {
+        margin-top: 46px;
+      }
+
+      @include mq("phone") {
+        margin-top: 35px;
+      }
+    }
+  }
+
+  &--iconPlus {
+    width: 100%;
+    padding-left: 1%;
+
+    .dropDownBlock__title {
+      margin-right: 29px;
+
+      @include mq("tablet", "phone") {
+        padding-left: 40px;
+        margin-right: 0;
+      }
+
+      @include mq("phone") {
+        padding-left: 40px;
+        margin-right: 0;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .dropDownBlock__text {
+      margin-top: 17px;
+
+      @include mq("desktop-wide", "tablet") {
+        padding-right: 12px;
+      }
+
+      @include mq("tablet", "phone") {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @include mq("phone") {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .dropDownBlock__icon {
+      width: 30px;
+      height: 30px;
+      top: 0.1em;
+      right: -25px;
+
+      @include mq("desktop-wide", "desktop") {
+        width: 26px;
+        height: 26px;
+        right: -20px;
+      }
+
+      @include mq("desktop", "tablet-wide") {
+        width: 24px;
+        height: 24px;
+        right: -12px;
+      }
+
+      @include mq("tablet-wide", "tablet") {
+        width: 22px;
+        height: 22px;
+        right: -12px;
+      }
+
+      @include mq("tablet", "phone") {
+        width: 24px;
+        height: 24px;
+        left: 0;
+        right: 0;
+        top: -2px;
+      }
+
+      @include mq("phone") {
+        width: 20px;
+        height: 20px;
+        right: 0;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .dropDownBlock__content {
+      margin-top: 45px;
+    }
+  }
+
+  &--grey.dropDownBlock--opened {
+    .dropDownBlock__title {
+      opacity: 0.5;
+    }
+  }
+
+  &--white {
+    background-color: $color-light-bg;
+    padding: 0;
+    border-radius: 8px;
+
+    .dropDownBlock__title {
+      display: block;
+      box-shadow: 0 6px 27px 0 rgba(#000, 0.05);
+      padding: 70px;
+
+      @include mq("desktop-wide", "desktop") {
+        padding: 50px 60px;
+      }
+
+      @include mq("desktop", "tablet-wide") {
+        padding: 40px 50px;
+      }
+
+      @include mq("tablet-wide", "phone") {
+        padding: 30px 40px;
+      }
+
+      @include mq("phone") {
+        padding: 22px 36px 22px 18px;
+      }
+
+      &::after {
+        content: "";
+        background-image: url("/content/arrow.png") !important;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        position: absolute;
+        top: 45%;
+        transform: translateY(50%);
+        right: 80px;
+        width: 23px;
+        height: 11px;
+        transition: transform 0.3s linear;
+        cursor: pointer;
+
+        @include mq("desktop-wide", "desktop") {
+          width: 15px;
+          height: 8px;
+          right: 70px;
+        }
+
+        @include mq("desktop", "tablet-wide") {
+          width: 15px;
+          height: 8px;
+          right: 60px;
+        }
+
+        @include mq("tablet-wide", "tablet") {
+          width: 15px;
+          height: 8px;
+          right: 40px;
+        }
+
+        @include mq("tablet", "phone") {
+          width: 15px;
+          height: 8px;
+          right: 30px;
+        }
+
+        @include mq("phone") {
+          width: 15px;
+          height: 8px;
+          right: 18px;
+        }
+      }
+    }
+
+    .dropDownBlock__content {
+      padding: 80px;
+
+      @include mq("desktop-wide", "desktop") {
+        padding: 75px 62px;
+      }
+
+      @include mq("desktop", "tablet-wide") {
+        padding: 50px;
+      }
+
+      @include mq("tablet-wide", "tablet") {
+        padding: 40px;
+      }
+
+      @include mq("tablet", "phone") {
+        padding: 46px 40px;
+      }
+
+      @include mq("phone") {
+        padding: 32px 20px;
+      }
+    }
+  }
+
+  &--margin {
+    margin: 100px 0 !important;
+  }
+
+  &--content {
+    margin-top: 90px;
+    margin-bottom: 90px !important;
+
+    @include mq("desktop-wide", "desktop") {
+      margin-top: 70px;
+      margin-bottom: 90px !important;
+    }
+
+    @include mq("desktop", "tablet-wide") {
+      margin-top: 60px;
+      margin-bottom: 60px !important;
+    }
+
+    @include mq("tablet-wide", "tablet") {
+      margin-top: 35px;
+      margin-bottom: 35px !important;
+    }
+
+    @include mq("tablet", "phone") {
+      margin-top: 40px;
+      margin-bottom: 40px !important;
+    }
+
+    @include mq("phone") {
+      margin-top: 40px;
+      margin-bottom: 40px !important;
+    }
+  }
+
+  &--opened {
+    .dropDownBlock {
+      .dropDownBlock__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .dropDownBlock__title::after {
+      transform: rotate(180deg);
+    }
+
+    &.dropDownBlock--iconPlus {
+      .dropDownBlock__icon {
+        transform: rotate(45deg);
+      }
+    }
+
+    .dropDownBlock--white {
+      .dropDownBlock__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

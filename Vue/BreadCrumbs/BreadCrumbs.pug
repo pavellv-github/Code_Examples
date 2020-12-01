@@ -1,0 +1,6 @@
+nav.breadCrumbs(aria-label="Breadcrumb")
+  ul.breadCrumbs__list
+    li.breadCrumbs__item(v-for= 'item in items.slice(0, -1)', :key= 'item.id')
+      nuxt-link(:to= 'item.route') {{ item.title }}
+    li.breadCrumbs__item
+      span {{ items[items.length - 1].title }}

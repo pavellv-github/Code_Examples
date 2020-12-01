@@ -1,0 +1,96 @@
+.baseCheckbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 38px;
+  user-select: none;
+
+  @include mq("tablet", "phone") {
+    padding-left: 30px;
+  }
+
+  &__text {
+    font: 400 16px/28px "Arial", sans-serif;
+    color: #1a1a1a;
+    display: block;
+    transition: opacity 0.3s ease;
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 15px;
+      line-height: 26px;
+    }
+
+    @include mq("desktop-small", "phone") {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @include mq("phone") {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__custom {
+    width: 22px;
+    height: 22px;
+    border: 1px solid #4d4d4d;
+    background-color: transparent;
+    position: absolute;
+    display: block;
+    top: 1px;
+    left: 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    @include mq("phone") {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -6px;
+    width: 12px;
+    opacity: 0;
+    height: 10px;
+    transition: opacity 0.3s ease;
+  }
+
+  &__field {
+    display: none;
+
+    &:checked + .baseCheckbox__custom {
+      .baseCheckbox__icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+
+    .baseCheckbox__text {
+      opacity: 0.5 !important;
+    }
+
+    .baseCheckbox__custom {
+      background-color: transparent !important;
+      border-color: #d2d2d2 !important;
+    }
+  }
+
+  &--error {
+    .baseCheckbox__custom {
+      border-color: #ff6d6d;
+    }
+
+    @include hover() {
+      .baseCheckbox__custom {
+        border-color: #ff6d6d;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.cardPartner
+  a.cardPartner__link(:href='item.href', target="_blank", rel="noopener noreferrer nofollow")
+  BasePicture.cardPartner__picture
+    source(v-for="source in item.sources", :key="source.id", srcset="/content/not-available.svg", :data-src="source.SRCSET", v-bind="{'srcset': source.SRCSET, 'media': (source.SIZE !== undefined && source.SIZE !== null) ? `(max-width: ${source.SIZE}px)` : undefined, 'type': (source.TYPE !== undefined) ? `image/${source.TYPE}` : undefined}")
+    img.cardPartner__pictureSource(src= '/content/not-available.svg', :data-src='item.src', :alt='item.title')
+  .cardPartner__wrapper
+    .cardPartner__tags(v-if="item.tags")
+      .cardPartner__tag(v-for="tag in item.tags", :key="tag.id") {{ tag.title }}
+    .cardPartner__content
+      h4.cardPartner__title {{ item.title }}
+      .cardPartner__body
+        button.cardPartner__button Список городов
+        BaseTooltip.cardPartner__toolTip {{ formatCities }}
+        template(v-if="item.models && item.models.length > 0")
+          button.cardPartner__button Список Моделей
+          BaseTooltip.cardPartner__toolTip {{ formatModels }}

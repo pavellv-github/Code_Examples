@@ -1,0 +1,3 @@
+.baseTabsItem(:class="{'baseTabsItem--hidden': !isShow, 'baseTabsItem--show': isShow}")
+  template(v-if="isMounted")
+    slot

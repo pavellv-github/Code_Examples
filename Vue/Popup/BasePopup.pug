@@ -1,0 +1,6 @@
+transition(name= 'popup', :duration="{ enter: 800, leave: 800 }")
+  .basePopup(v-show= 'isOpen')
+    .basePopup__overlay(@click= '$popups.close(name)')
+    .basePopup__wrapper
+      .basePopup__scroll
+        slot

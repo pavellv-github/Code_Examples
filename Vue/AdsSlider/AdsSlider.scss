@@ -1,0 +1,36 @@
+@import "~/assets/styles/settings.scss";
+
+
+.sliderTickets {
+  padding-bottom: 10px;
+
+  &.falseMargin {
+    .noticeBlock {
+      margin: 0;
+    }
+  }
+
+  .swiper-slide {
+    width: auto;
+  }
+
+  .swiper-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background-color: $passive;
+      margin: 0 4px 0 4px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $accent;
+    }
+  }
+}

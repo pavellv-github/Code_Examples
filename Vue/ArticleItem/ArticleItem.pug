@@ -1,0 +1,10 @@
+.articleItem
+  nuxt-link.articleItem__image(:to="localePath({name: item.path, params: { id: item.code } })", :style= "{'padding-top': paddingTop}")
+    transition(name= "show")
+      img(:src="$store.state.ModuleStructure.baseUrl+item.preview_picture.src", :width= "item.preview_picture.width", :height= "item.preview_picture.height", ref= 'image', v-show= 'show')
+  .articleItem__titleText
+    p.articleItem__category(v-if= "item.section_name !== null && item.section_name !== ''") {{ item.section_name }}
+    nuxt-link.articleItem__title(v-if= "item.name !== null && item.name !== ''", :to="localePath({name: item.path, params: { id: item.code } })") {{ item.name }}
+    p.articleItem__date(v-if= "item.active_from !== null && item.active_from !== ''") {{ item.active_from }}
+  .articleItem__announText(v-if= "(item.preview_text !== null && item.preview_text !== '') && !isVertical")
+    p.articleItem__announ(v-html= 'item.preview_text')

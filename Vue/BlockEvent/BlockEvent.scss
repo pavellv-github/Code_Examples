@@ -1,0 +1,358 @@
+.blockEvent {
+  align-items: flex-start;
+  border: 10px solid #e9eef3;
+  display: flex;
+  padding: 40px 135px 38px 51px;
+  position: relative;
+
+  @include mq("desktop", "desktop-small") {
+    padding: 30px 45px 29px 32px;
+  }
+
+  @include mq("desktop-small", "tablet") {
+    padding: 24px 30px 28px 26px;
+  }
+
+  @include mq("tablet") {
+    align-items: stretch;
+  }
+
+  @include mq("tablet", "phone") {
+    padding: 24px 45px 28px 25px;
+  }
+
+  @include mq("phone") {
+    display: block;
+    padding: 26px 20px 29px 26px;
+  }
+
+  & + & {
+    margin-top: 25px;
+
+    @include mq("desktop", "desktop-small") {
+      margin-top: 20px;
+    }
+
+    @include mq("desktop-small") {
+      margin-top: 18px;
+    }
+  }
+
+  @include hover {
+    .blockEvent__description {
+      transform: translateY(-10px);
+
+      @include mq("tablet") {
+        transform: none;
+      }
+    }
+
+    .blockEvent__subscribe {
+      opacity: 1;
+      transform: translateY(-10px);
+
+      @include mq("tablet") {
+        transform: none;
+      }
+    }
+  }
+
+  &__link {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    margin-top: 9px;
+
+    @include mq("desktop") {
+      margin-top: 0;
+    }
+  }
+
+  &__place {
+    border-right: 1.5px solid #e0e5eb;
+    flex-shrink: 0;
+    padding-right: 78px;
+
+    @include mq("desktop", "desktop-small") {
+      padding-right: 48px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      padding-right: 11px;
+    }
+
+    @include mq("tablet", "phone") {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 19px;
+    }
+
+    @include mq("phone") {
+      border-bottom: 1.5px solid #e0e5eb;
+      border-right: none;
+      padding-bottom: 16px;
+      padding-right: 0;
+    }
+  }
+
+  &__number {
+    color: #000;
+    font: 500 44px/1em "PFDinTextCondPro", sans-serif;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+
+    @include mq("desktop") {
+      font-size: 36px;
+    }
+  }
+
+  &__month {
+    color: #000;
+    font: 500 14px/22px "PFDinTextCondPro", sans-serif;
+    margin-top: -6px;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 56px;
+
+    @include mq("desktop") {
+      font-size: 12px;
+      line-height: 20px;
+      width: 50px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      margin-top: 0;
+    }
+
+    @include mq("tablet", "phone") {
+      margin-top: -2px;
+    }
+
+    @include mq("phone") {
+      margin-top: -3px;
+    }
+  }
+
+  &__location {
+    margin-left: 29px;
+    margin-top: 3px;
+    width: 115px;
+
+    @include mq("desktop", "desktop-small") {
+      margin-left: 11px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      margin-left: 16px;
+      margin-top: 0;
+      width: 100px;
+    }
+
+    @include mq("tablet", "phone") {
+      margin-left: 10px;
+      margin-top: 0;
+      width: 100px;
+    }
+
+    @include mq("phone") {
+      margin-left: 15px;
+      margin-top: -2px;
+      width: 149px;
+    }
+  }
+
+  &__locationItem {
+    align-items: center;
+    display: flex;
+
+    & + & {
+      margin-top: 10px;
+
+      @include mq("desktop", "desktop-small") {
+        margin-top: 12px;
+      }
+
+      @include mq("tablet") {
+        margin-top: 14px;
+      }
+    }
+
+    svg {
+      fill: transparent;
+      stroke: rgba(0, 0, 0, 0.5);
+      height: 15px;
+      width: 15px;
+
+      @include mq("desktop", "tablet") {
+        width: 14px;
+      }
+    }
+
+    p {
+      color: rgba(16, 16, 16, 0.5);
+      font: 400 16px/1em "PFDinTextCondPro", sans-serif;
+      margin-left: 5px;
+      letter-spacing: 0.01em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+
+      @include mq("desktop", "tablet") {
+        margin-left: 7px;
+      }
+
+      @include mq("desktop-small") {
+        font-size: 14px;
+      }
+    }
+
+    &--geo {
+      svg {
+        stroke: transparent;
+      }
+    }
+  }
+
+  &__city {
+    color: #000;
+    font: 500 23px/28px "PFDinTextCondPro", sans-serif;
+    margin-top: 22px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+
+    @include mq("desktop") {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include mq("desktop", "tablet") {
+      margin-top: 17px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      width: 166px;
+    }
+
+    @include mq("desktop", "desktop-small") {
+      margin-left: 3px;
+      width: 174px;
+    }
+
+    @include mq("desktop-small", "phone") {
+      margin-left: 0;
+    }
+
+    @include mq("tablet", "phone") {
+      margin-top: 0;
+      width: 160px;
+    }
+
+    @include mq("phone") {
+      margin-top: 12px;
+      width: 221px;
+    }
+  }
+
+  &__content {
+    margin-left: 77px;
+    position: relative;
+
+    @include mq("desktop", "desktop-small") {
+      margin-left: 46px;
+    }
+
+    @include mq("desktop-small", "phone") {
+      margin-left: 29px;
+      margin-top: 3px;
+    }
+
+    @include mq("phone") {
+      margin-left: 0;
+      margin-top: 16px;
+    }
+  }
+
+  &__title {
+    color: #000;
+    letter-spacing: -0.01em;
+  }
+
+  &__description {
+    color: #a5a5a5;
+    margin-top: 20px;
+    transition: 0.3s transform ease;
+
+    @include mq("desktop", "desktop-small") {
+      margin-top: 10px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      margin-top: 13px;
+    }
+
+    @include mq("tablet", "phone") {
+      margin-top: 3px;
+    }
+
+    @include mq("phone") {
+      margin-top: 10px;
+    }
+  }
+
+  &__subscribe {
+    bottom: -29px;
+    font: 400 16px/1em "PFDinTextCondPro", sans-serif;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    text-transform: uppercase;
+    transition: 0.3s transform ease, 0.3s opacity ease;
+    z-index: 1;
+
+    @include mq("desktop", "desktop-small") {
+      bottom: -23px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      bottom: -26px;
+    }
+
+    @include mq("tablet") {
+      display: inline-block;
+      position: static;
+      opacity: 1;
+    }
+
+    @include mq("tablet", "phone") {
+      margin-top: 8px;
+    }
+
+    @include mq("phone") {
+      margin-top: 16px;
+    }
+
+    &::after {
+      border-top: 1px dashed #000;
+      bottom: -2px;
+      content: "";
+      display: block;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+}

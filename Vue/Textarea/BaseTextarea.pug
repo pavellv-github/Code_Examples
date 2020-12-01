@@ -1,0 +1,17 @@
+.baseTextarea(:class= "{'baseTextarea--error': this.errors.has(this.name), 'baseTextarea--focus': isFocus, 'baseTextarea--blur': isGradient}")
+  .baseTextarea__label 
+    span {{ placeholder }}
+  .baseTextarea__body(v-bar="{}", ref="bar")
+    textarea.baseTextarea__field(
+      ref= 'field'
+      :name= 'name',
+      @input= 'onInput',
+      v-validate="validate",
+      @blur= 'isBlur = false',
+      @focus= 'isBlur = true',
+      v-model= 'activeText'
+    )
+  span.baseTextarea__tip(onClick= 'return false;')
+    svg
+      use(xlink:href= '/assets/inputSprite.svg#icon-warning')
+  span.baseTextarea__tipMessage {{ compMessage }}

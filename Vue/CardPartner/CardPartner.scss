@@ -1,0 +1,283 @@
+.cardPartner {
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 52px 46px 42px;
+  position: relative;
+  text-decoration: none;
+
+  @include mq("desktop", "desktop-small") {
+    padding: 52px 46px 38px;
+  }
+
+  @include mq("desktop-small", "tablet") {
+    padding: 36px 32px 27px;
+  }
+
+  @include mq("tablet", "phone") {
+    padding: 35px 30px 28px;
+  }
+
+  @include mq("phone") {
+    padding: 33px 31px 30px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #e9eef3;
+    transition: transform 0.2s ease;
+    pointer-events: none;
+
+    @include mq("desktop-small") {
+      border: 8px solid #e9eef3;
+    }
+  }
+
+  @include hover {
+    &::before {
+      transform: scaleY(1.2);
+
+      @include mq("tablet") {
+        transform: none;
+      }
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    & > img[data-src] {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+    }
+
+    &::after {
+      content: "";
+      background: rgba(38, 95, 153, 0.05);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: (17900% / 323);
+    }
+  }
+
+  &__title {
+    font-family: "PFDinTextCondPro", sans-serif;
+    font-size: 26px;
+    line-height: 31px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    color: #000;
+    margin-top: 14px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 21px;
+      line-height: 26px;
+      margin-top: 23px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 18px;
+      line-height: 23px;
+    }
+
+    @include mq("tablet", "phone") {
+      font-size: 21px;
+      line-height: 26px;
+    }
+
+    @include mq("phone") {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  &__toolTip {
+    max-width: 100%;
+  }
+
+  &__button {
+    display: inline-block;
+    width: auto;
+    font-family: "PFDinTextCondPro", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: #808285;
+    border: none;
+    border-bottom: 1px dashed #808285;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #fff;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    z-index: 1;
+
+    @include mq("desktop") {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    & ~ & {
+      margin-top: 8px;
+
+      @include mq("phone") {
+        margin-top: 3px;
+      }
+    }
+
+    &:nth-last-of-type(1) + .cardPartner__toolTip {
+      transform: translateY(21px);
+    }
+
+    &:first-of-type + .cardPartner__toolTip {
+      transform: translateY(-8px);
+    }
+
+    & + .cardPartner__toolTip {
+      max-width: calc(100% + 138px);
+
+
+      @include mq("desktop-small", "tablet") {
+        max-width: calc(100% + 110px);
+      }
+
+      @include mq("tablet", "phone") {
+        max-width: calc(100% + 102px);
+      }
+
+      @include mq("phone") {
+        max-width: calc(100% + 100px);
+      }
+    }
+
+    &:hover {
+      & + .cardPartner__toolTip {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__content {
+    order: -1;
+    width: 100%;
+  }
+
+  &__tags {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-top: 27px;
+    padding-left: 20px;
+    width: 138px;
+
+    @include mq("desktop", "desktop-small") {
+      margin-top: 23px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      margin-top: 15px;
+      width: 110px;
+    }
+
+    @include mq("tablet", "phone") {
+      margin-top: 15px;
+      padding-left: 12px;
+      width: 102px;
+    }
+
+    @include mq("phone") {
+      margin-top: 13px;
+      padding-left: 10px;
+      width: 100px;
+    }
+
+    & + .cardPartner__content {
+      max-width: calc(100% - 138px);
+
+      @include mq("desktop-small", "tablet") {
+        max-width: calc(100% - 110px);
+      }
+
+      @include mq("tablet", "phone") {
+        max-width: calc(100% - 102px);
+      }
+
+      @include mq("phone") {
+        max-width: calc(100% - 100px);
+      }
+    }
+  }
+
+  &__tag {
+    background: rgba(210, 220, 229, 0.2);
+    border: 1px solid #8091a0;
+    border-radius: 26px;
+    color: #8091a0;
+    padding: 6px 16px;
+    font: 400 16px/1em "PFDinTextCondPro", sans-serif;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+
+    @include mq("desktop-small") {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+    & + & {
+      margin-top: 8px;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}

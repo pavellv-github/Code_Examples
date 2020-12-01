@@ -1,0 +1,370 @@
+.caseTechnology {
+  background-color: #1a193a;
+  position: relative;
+  padding: 225px vw(1920, 235) 0;
+  overflow-x: hidden;
+  width: 100%;
+
+  @include mq("desktop", "desktop-small") {
+    padding: 225px vw(1366, 170) 0;
+  }
+
+  @include mq("desktop-small", "tablet") {
+    padding: 135px vw(1024, 125) 0;
+  }
+
+  @include mq("tablet", "tablet-small") {
+    padding: 120px 40px 0;
+    overflow: hidden;
+  }
+
+  @include mq("tablet-small") {
+    padding: 80px 10px 0;
+  }
+
+  &::before,
+  &::after {
+    background: radial-gradient(36.86% 36.86% at 50% 50%, #300b6d 0%, rgba(12, 7, 238, 0) 100%);
+    content: "";
+    height: 1034px;
+    width: 1034px;
+    filter: blur(250px);
+    position: absolute;
+    z-index: 1;
+
+    @include mq("desktop", "desktop-small") {
+      height: 842px;
+      width: 842px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      height: 561px;
+      width: 561px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      height: 738px;
+      width: 738px;
+    }
+
+    @include mq("tablet-small") {
+      height: 555px;
+      width: 555px;
+    }
+  }
+
+  &::before {
+    left: 0;
+    top: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  &__content {
+    background: rgba(52, 13, 130, 0.05);
+    border: 2px solid $violet_18;
+    box-shadow: inset 0 0 100px $violet_19;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    padding: vw(1920, 155) vw(1920, 180) vw(1920, 125);
+    z-index: 2;
+
+    @include mq("desktop", "desktop-small") {
+      padding: vw(1366, 110) vw(1366, 115) vw(1366, 110);
+    }
+
+    @include mq("desktop-small", "tablet") {
+      padding: vw(1024, 80) vw(1024, 65);
+    }
+
+    @include mq("tablet", "tablet-small") {
+      padding: 65px 60px;
+    }
+
+    @include mq("tablet-small", "phone") {
+      padding: 70px 28px;
+    }
+
+    @include mq("phone") {
+      padding: 36px 24px;
+    }
+  }
+
+  &__grid {
+    min-height: 100%;
+    min-width: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    color: $white;
+    font: 300 45px/1em "Manrope", sans-serif;
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 35px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 28px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 30px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 24px;
+      line-height: 40px;
+    }
+
+    @include mq("tablet-small", "phone") {
+      white-space: nowrap;
+    }
+  }
+
+  &__text {
+    color: #5256be;
+    display: block;
+    font: 400 22px/46px "Manrope", sans-serif;
+    letter-spacing: -0.01em;
+    width: 100%;
+
+    @include mq("desktop", "desktop-small") {
+      line-height: 36px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__mt {
+    margin-top: 50px;
+
+    &--sm {
+      margin-top: 25px;
+    }
+
+    &--md {
+      margin-top: 35px;
+    }
+  }
+
+  &__list {
+    margin-top: 10px;
+  }
+
+  &__item {
+    padding-left: 30px;
+    position: relative;
+
+    @include mq("tablet") {
+      padding-left: 20px;
+    }
+
+    &::before,
+    &::after {
+      border-radius: 50%;
+      content: "";
+      left: 5px;
+      position: absolute;
+      top: 23px;
+      transform: translate(-50%, -50%);
+
+      @include mq("desktop", "desktop-small") {
+        top: 18px;
+      }
+
+      @include mq("desktop-small", "tablet") {
+        top: 15px;
+      }
+
+      @include mq("tablet", "tablet-small") {
+        top: 16px;
+        left: 2px;
+      }
+
+      @include mq("tablet-small") {
+        top: 12px;
+        left: 4;
+      }
+    }
+
+    &::after {
+      height: 7px;
+      background: #b8b7ff;
+      width: 7px;
+      z-index: 2;
+    }
+
+    &::before {
+      border: 4px solid #6100ff;
+      box-shadow: 0 0 5px #000aff;
+      height: 11px;
+      filter: blur(2px);
+      width: 11px;
+      z-index: 1;
+    }
+
+    & + & {
+      margin-top: 15px;
+    }
+  }
+
+  &__button {
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid $violet_18;
+    box-shadow: inset 0 0 30px rgba(97, 0, 255, 0.76);
+    border-radius: 50px;
+    display: inline-block;
+    line-height: 42px;
+    padding: 0 10px;
+    margin-left: 7px;
+    width: auto;
+  }
+
+  &__view {
+    @include mq("tablet-small") {
+      max-width: 260px;
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+
+    &.fade-enter-active {
+      transition: 0.5s ease transform;
+
+      .caseTechnology__image {
+        transition: 0.5s ease opacity 0.5s;
+      }
+    }
+
+    &.fade-leave-active {
+      transition: 0.5s ease transform 0.5s;
+    }
+
+    &.fade-enter,
+    &.fade-leave-to {
+      transform: scale(0);
+
+      .caseTechnology__image {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__body {
+    background-color: rgba(52, 13, 130, 0.2);
+    border: 2px solid $violet_18;
+    border-radius: 50px;
+    box-shadow: inset 0 0 100px rgba(97, 0, 255, 0.22);
+    backdrop-filter: blur(100px);
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    right: 60px;
+    left: 60px;
+    z-index: 5;
+
+    @include mq("tablet", "tablet-small") {
+      top: 20px;
+      bottom: 20px;
+    }
+
+    @include mq("tablet-small") {
+      left: 30px;
+      right: 30px;
+    }
+  }
+
+  &__image {
+    z-index: 2;
+    transition: 0.5s ease opacity;
+    max-width: calc(100% - 90);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include mq("tablet") {
+      max-width: calc(100% - 40px);
+    }
+  }
+
+  &__close {
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px solid #312d76;
+    box-shadow: inset 0 0 16px rgba(97, 0, 255, 0.38);
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    z-index: 2;
+
+    &::before,
+    &::after {
+      background-color: #6979de;
+      content: "";
+      display: block;
+      height: 1px;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,290 @@
+.workCard {
+  height: 470px;
+  background: linear-gradient(135deg, $black_5 0%, $grey_8 100%), $grey_9;
+  background-blend-mode: soft-light, normal;
+  mix-blend-mode: normal;
+  box-shadow: -10px -10px 20px $grey_10, 10px 10px 30px $grey_11, inset 4px 4px 4px $grey_12, inset -5px -5px 6px $grey_13;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+
+  @include mq("desktop", "tablet") {
+    height: 314px;
+    padding: 18px;
+  }
+
+  @include mq("tablet", "tablet-small") {
+    height: 435px;
+    padding: 30px;
+  }
+
+  @include mq("tablet-small") {
+    padding: 24px;
+    height: 370px;
+  }
+
+  &__picture {
+    border-radius: 14px;
+    height: 192px;
+    overflow: hidden;
+
+    @include mq("desktop", "tablet") {
+      height: 142px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      height: 178px;
+    }
+
+    @include mq("tablet-small") {
+      height: 155px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      font-family: 'object-fit: cover; object-position: center;'; //stylelint-disable-line
+      height: 100%;
+      width: 100%;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &__rank {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 58px;
+
+    @include mq("desktop", "tablet") {
+      margin-top: 46px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      margin-top: 52px;
+    }
+
+    @include mq("tablet-small") {
+      margin-top: 40px;
+    }
+  }
+
+  &__rank-icon {
+    width: 87px;
+    height: 65px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__rank-text {
+    font: 600 12px/16px "Manrope", sans-serif;
+    letter-spacing: -0.01em;
+    color: $white;
+    margin-top: 8px;
+  }
+
+  &__label {
+    width: 100%;
+    text-align: left;
+    font: 500 14px/24px "Manrope", sans-serif;
+    color: $grey_2;
+    margin-top: 27px;
+    letter-spacing: -0.01em;
+
+    @include mq("desktop", "tablet") {
+      font-size: 12px;
+      margin-top: 18px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 14px;
+      margin-top: 27px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 12px;
+      margin-top: 18px;
+    }
+  }
+
+  &__description {
+    width: 100%;
+    text-align: left;
+    font: 300 20px/26px "Manrope", sans-serif;
+    color: $grey_3;
+    margin-top: 7px;
+
+    @include mq("desktop", "tablet") {
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 0;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 13px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__shortcut {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+
+    @include mq("desktop", "tablet") {
+      bottom: 15px;
+      left: 15px;
+    }
+
+    @include mq("tablet", "phone") {
+      bottom: 30px;
+      left: 30px;
+    }
+  }
+
+  &__shortcut-icon {
+    width: 14px;
+    height: 18px;
+
+    @include mq("desktop", "tablet") {
+      width: 15px;
+      height: 17px;
+    }
+
+    @include mq("tablet", "phone") {
+      width: 15px;
+      height: 17px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__shortcut-text {
+    font: 600 16px/26px "Manrope", sans-serif;
+    color: $violet_5;
+    margin-left: 7px;
+
+    @include mq("desktop", "tablet") {
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 16px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 14px;
+    }
+  }
+
+  &__date {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font: 600 16px/26px "Manrope", sans-serif;
+    color: $grey_2;
+
+    @include mq("desktop", "tablet") {
+      bottom: 15px;
+      left: 15px;
+    }
+
+    @include mq("tablet", "phone") {
+      bottom: 30px;
+      left: 30px;
+    }
+  }
+
+  &--big {
+    .workCard__picture {
+      position: absolute;
+      top: 30px;
+      left: 28px;
+      height: 410px;
+      z-index: 1;
+
+      @include mq("desktop", "tablet") {
+        width: 85%;
+        height: 278px;
+        top: 18px;
+        left: 18px;
+      }
+
+      @include mq("tablet", "tablet-small") {
+        width: 85%;
+        height: 383px;
+      }
+
+      @include mq("tablet-small") {
+        width: 82%;
+        height: 318px;
+        top: 24px;
+        left: 24px;
+      }
+    }
+
+    .workCard__rank {
+      z-index: 2;
+    }
+
+    .workCard__label {
+      margin-top: 100px;
+      text-align: center;
+      z-index: 2;
+      color: $white;
+
+      @include mq("desktop", "desktop-small") {
+        margin-top: 48px;
+      }
+
+      @include mq("desktop-small", "tablet") {
+        margin-top: 30px;
+      }
+
+      @include mq("tablet", "tablet-small") {
+        margin-top: 50px;
+      }
+
+      @include mq("tablet-small") {
+        margin-top: 25px;
+      }
+    }
+
+    .workCard__description {
+      text-align: center;
+      z-index: 2;
+      color: $white;
+    }
+
+    .workCard__shortcut {
+      display: none;
+    }
+
+    .workCard__date {
+      display: none;
+    }
+  }
+}

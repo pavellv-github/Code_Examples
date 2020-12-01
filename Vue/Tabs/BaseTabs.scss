@@ -1,0 +1,127 @@
+.baseTabs {
+  display: block;
+  width: auto;
+  min-width: 100%;
+
+  &__container {
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      background: linear-gradient(to left, rgba(#fff, 1), rgba(#fff, 0));
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 20px;
+      z-index: 2;
+    }
+  }
+
+  &__header {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    padding-bottom: 14px;
+    margin-bottom: 44px;
+    overflow: hidden;
+
+    @include mq("desktop", "desktop-small") {
+      margin-bottom: 36px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      margin-bottom: 37px;
+    }
+
+    @include mq("tablet", "phone") {
+      margin-bottom: 30px;
+    }
+
+    @include mq("phone") {
+      margin-bottom: 22px;
+    }
+
+    @include mq("tablet") {
+      overflow-x: auto;
+    }
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__line {
+    position: absolute;
+    height: 3px;
+    background-color: #e50014;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    transition: width 0.3s ease, transform 0.3s ease;
+  }
+
+  #{&}__button {
+    padding: 0 22px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    transform: translate(0, 0);
+    transition: opacity 0.3s ease;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    @include mq("desktop-small", "phone") {
+      padding: 0 18px;
+    }
+
+    @include mq("phone") {
+      padding: 0 12px;
+    }
+
+    span {
+      transform: translateY(14%);
+      color: #101010;
+      opacity: 0.5;
+      font: 300 21.5px/1em "PFDinTextCondPro", sans-serif;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      will-change: transform;
+      backface-visibility: hidden;
+      letter-spacing: 0.02em;
+
+      @include mq("desktop", "desktop-small") {
+        font-size: 19.5px;
+      }
+
+      @include mq("desktop-small") {
+        font-size: 17.5px;
+      }
+    }
+
+    &--active {
+      cursor: default;
+
+      span {
+        opacity: 1;
+      }
+
+      @include hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--disable & {
+    &__header {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.basePagination {
+  align-items: center;
+  border-top: 1px solid #ececec;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+
+  &__field {
+    display: flex;
+  }
+
+  &__number {
+    align-items: center;
+    background-color: transparent;
+    border: 1.5px solid #d5dfe8;
+    color: #000;
+    display: flex;
+    font: 400 18px/1em "PFDinTextCondPro", serif;
+    height: 52px;
+    justify-content: center;
+    padding: 0;
+    text-decoration: none;
+    transition: 0.3s border-color ease;
+    width: 52px;
+
+    @include mq("desktop", "desktop-small") {
+      height: 50px;
+      width: 50px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      height: 48px;
+      width: 48px;
+    }
+
+    @include mq("tablet") {
+      border: none;
+      color: #d5dfe8;
+      display: none;
+      height: auto;
+      width: auto;
+    }
+
+    & + & {
+      margin-left: 10px;
+
+      @include mq("desktop-small", "tablet") {
+        margin-left: 12px;
+      }
+
+      @include mq("phone") {
+        margin-left: 5px;
+      }
+    }
+
+    @include hover {
+      border-color: rgba(#d5dfe8, 0.5);
+    }
+
+    &--active {
+      border-color: #000;
+      pointer-events: none;
+      cursor: default;
+
+      @include mq("tablet") {
+        color: #000;
+        display: flex;
+      }
+    }
+
+    &--disabled {
+      pointer-events: none;
+      cursor: default;
+
+      @include mq("tablet") {
+        color: #000;
+      }
+    }
+
+    &.basePagination__number--mobile {
+      display: flex;
+    }
+  }
+
+  &__button {
+    svg {
+      height: 12px;
+      margin-left: 5px;
+      stroke: #fff;
+      width: 6px;
+    }
+  }
+}

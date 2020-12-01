@@ -1,0 +1,20 @@
+label.baseInput(:class="{ 'baseInput--error': errors.has(name), 'baseInput--disabled': disabled, 'baseInput--focus': isFocus}")
+  span.baseInput__field
+    span.baseInput__label {{ placeholder }}
+    input.baseInput__hidden(
+      ref= 'field'
+      :autocomplete = "autocomplete",
+      :name="name",
+      :data-vv-as='filedName',
+      v-validate="dynamicValidate",
+      v-bind= 'dynamicProps',
+      v-imask="dynamicMask || ''",
+      @blur="isBlur = false",
+      @focus="isBlur = true",
+      @input= "onInput",
+      @accept="onAccept")
+
+    span.baseInput__tip(onClick= 'return false;')
+      svg
+        use(xlink:href= '/assets/inputSprite.svg#icon-warning')
+    span.baseInput__tipMessage {{ compMessage }}

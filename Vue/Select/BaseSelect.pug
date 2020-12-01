@@ -1,0 +1,18 @@
+.baseSelect(:class= "{ 'baseSelect--native': isNative, 'baseSelect--open': isOpen, 'baseSelect--animate': isTransition, 'error': this.errors.has(this.name)}")
+
+  .baseSelect__label(:class= "{'baseSelect__label--changed': isChanged}") {{ placeholder }}
+  select.baseSelect__field(ref="select", :name= 'name', @change= 'change', :class= "{'baseSelect__field--changed': isChanged}", v-validate="validate")
+    option(selected, disabled, value)
+    option(v-for= 'item in options', :key= 'item.id', :value= 'item.value') {{ item.text }}
+
+  .baseSelect__header(:class= "{'baseSelect__header--changed': isChanged}", @click= 'toggle', ref= 'header')
+    span {{ activeText }}
+
+  transition(name= 'height', @after-enter= 'endTransition',  @after-leave= 'endTransition')
+    .baseSelect__body(v-show= 'isOpen', ref="body")
+      .baseSelect__scroll(ref="scroll")
+        div
+          a.baseSelect__option(:class= "{ 'baseSelect__option--selected': item.value === activeValue }" v-for= 'item in options', :key= 'item.id', :href= 'item.value', @click.prevent= 'optionClick') {{ item.text }}
+
+  svg.baseSelect__icon
+    use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-down`")

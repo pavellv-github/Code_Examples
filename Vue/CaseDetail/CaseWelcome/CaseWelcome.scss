@@ -1,0 +1,276 @@
+.caseWelcome {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px 0;
+  background: #f6f8ff;
+  position: relative;
+
+  @include mq("tablet", "tablet-small") {
+    padding: 40px;
+  }
+
+  @include mq("tablet-small") {
+    padding: 30px 16px 80px;
+  }
+
+  @include mq("tablet") {
+    min-height: calc(100vh - 100px);
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1399px;
+    margin-left: 207px;
+
+    @include mq("desktop", "desktop-small") {
+      max-width: 1102px;
+      margin-left: 132px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      max-width: 824px;
+      margin-left: 100px;
+    }
+
+    @include mq("tablet") {
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  &__logo {
+    width: 107px;
+    display: block;
+    margin-left: -10px;
+
+    @include mq("desktop", "desktop-small") {
+      width: 97px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      width: 73px;
+    }
+
+    @include mq("tablet") {
+      width: 87px;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-top: 14px;
+    font-size: 80px;
+    line-height: 95px;
+    font-weight: 300;
+    color: #2c2a3d;
+    letter-spacing: -0.03em;
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 62px;
+      line-height: 70px;
+      margin-top: 11px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 48px;
+      line-height: 64px;
+      margin-top: 13px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 48px;
+      line-height: 64px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 26px;
+      line-height: 36px;
+      margin-top: 8px;
+    }
+  }
+
+  &__date {
+    display: block;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #2c2a3d;
+    margin-top: 33px;
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 14px;
+      line-height: 22px;
+      margin-top: 9px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 12px;
+      line-height: 20px;
+      margin-top: 14px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 14px;
+      line-height: 22px;
+      margin-top: 8px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 12px;
+      line-height: 20px;
+      margin-top: 15px;
+    }
+  }
+
+  &__anons {
+    display: block;
+    margin-top: 11px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    color: #58566b;
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 6px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 14px;
+      line-height: 22px;
+      margin-top: 3px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 6px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 14px;
+      line-height: 24px;
+      margin-top: 5px;
+    }
+  }
+
+  &__tags {
+    margin-left: -6px;
+    margin-right: -6px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 55px;
+    margin-bottom: -12px;
+
+    @include mq("desktop", "desktop-small") {
+      margin-top: 38px;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      margin-top: 32px;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      margin-top: 37px;
+      margin-left: -6px;
+      margin-right: -6px;
+    }
+
+    @include mq("tablet-small", "phone") {
+      margin-top: 31px;
+      margin-left: -3px;
+      margin-right: -3px;
+    }
+
+    @include mq("phone") {
+      margin-top: 30px;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+  }
+
+  &__tag {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: linear-gradient(317.7deg, #fff 0%, #000 105.18%), #f2f4fe;
+    background-blend-mode: soft-light, normal;
+    box-shadow: 2px 2px 5px rgba(208, 220, 255, 0.63), -2px -2px 4px #fff, inset -2px -2px 4px #e1e9ff, inset 2px 2px 3px #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 40px;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+    color: #58566b;
+    padding: 0 28px;
+    margin-bottom: 12px;
+
+    @include mq("desktop", "desktop-small") {
+      margin-left: 5px;
+      margin-right: 5px;
+      line-height: 34px;
+      padding: 0 22px;
+      font-size: 12px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      line-height: 34px;
+      padding: 0 20px;
+    }
+
+    @include mq("tablet") {
+      margin-left: 6px;
+      margin-right: 6px;
+      line-height: 38px;
+      padding: 0 20px;
+      font-size: 12px;
+    }
+
+    @include mq("tablet-small") {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+
+    @include mq("phone") {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  &__scrollIcon {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    margin-left: -19px;
+    width: 38px;
+    animation: twitch 0.85s linear infinite;
+  }
+}
+
+@keyframes twitch {
+  from {
+    transform: translateY(-2%);
+  }
+
+  50% {
+    transform: translateY(2%);
+  }
+
+  to {
+    transform: translateY(-2%);
+  }
+}

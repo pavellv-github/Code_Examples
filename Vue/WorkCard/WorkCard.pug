@@ -1,0 +1,20 @@
+nuxt-link.workCard(v-show-on-visible="{ margin: 300 }", :to="to", data-cy= "workLink", :class="{'workCard--big': type === 'regular-case'}")
+  picture.workCard__picture
+    source(:data-src="image", type="image/webp")
+    img(:src="image", :alt="description")
+
+  .workCard__rank(v-if="type === 'regular-case' && rankText !== ''")
+    .workCard__rank-icon
+      svg(v-svg, data-symbol="rank", symbol="rank")
+    .workCard__rank-text {{rankText}}
+
+  .workCard__label {{label}}
+
+  .workCard__description {{description}}
+
+  .workCard__shortcut(v-if="shortcut !=='' || shortcut === undefined")
+    .workCard__shortcut-icon
+      svg(v-svg, data-symbol="shortcut", symbol="shortcut")
+    .workCard__shortcut-text {{shortcut}}
+
+  .workCard__date(v-else-if="date !=='' || date === undefined") {{fixDate}}

@@ -1,0 +1,12 @@
+.basePagination(v-if="countItems > 1 && countOfPage > 1")
+  .basePagination__field
+    button.basePagination__number(
+      v-for= "(item, index) in numbers",
+      :key="item.id",
+      :class= "{'basePagination__number--active' : item.number === active, 'basePagination__number--disabled' : item.disable}",
+      @click="onClick(index)") {{ item.text }}
+    .basePagination__number.nuxt-link.basePagination__number--disable.basePagination__number--mobile(v-if="isMobile") /
+    .basePagination__number.basePagination__number--mobile(v-if="isMobile") {{ numbers[numbers.length -1].text }}
+  BaseButton.basePagination__button(v-if="countItems > 1 && active !== numbers.length", @click.native="onClick(active)") Вперед
+    svg
+      use(xlink:href= "/assets/sprite.svg#icon-arrow")

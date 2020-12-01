@@ -1,0 +1,225 @@
+.sectionAwards {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 390px;
+  padding-bottom: 230px;
+
+  @include mq("desktop-wide", "desktop") {
+    padding-top: 259px;
+  }
+
+  @include mq("desktop", "tablet-wide") {
+    padding-top: 190px;
+  }
+
+  @include mq("tablet-wide", "tablet") {
+    padding-top: 135px;
+  }
+
+  @include mq("tablet", "phone-wide") {
+    padding-top: 169px;
+    padding-bottom: 150px;
+  }
+
+  @include mq("phone-wide", "phone") {
+    padding-top: 163px;
+    padding-bottom: 0;
+  }
+
+  @include mq("phone") {
+    padding-top: 160px;
+    padding-bottom: 117px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+    align-self: center;
+    width: 100%;
+    position: relative;
+    transition: height 0.3s ease-in-out 0.15s;
+    margin-left: -7px;
+  }
+
+  &__title {
+    max-width: 360px;
+
+    @include mq("desktop", "tablet-wide") {
+      max-width: 325px;
+    }
+
+    @include mq("tablet-wide", "tablet") {
+      max-width: 175px;
+      margin-left: -6px;
+    }
+
+    @include mq("tablet", "phone-wide") {
+      max-width: 230px;
+      margin-left: -5px;
+    }
+
+    @include mq("phone-wide", "phone") {
+      margin-left: 7px;
+    }
+  }
+
+  &__description {
+    max-width: 60%;
+    margin-left: 6px;
+    margin-top: 31px;
+
+    @include mq("desktop-wide", "desktop") {
+      margin-top: 21px;
+      margin-left: 4px;
+    }
+
+    @include mq("desktop", "tablet-wide") {
+      max-width: 58%;
+      margin-left: 2px;
+      margin-top: 29px;
+    }
+
+    @include mq("tablet-wide", "tablet") {
+      max-width: 62%;
+      margin-left: 0;
+      margin-top: 27px;
+    }
+
+    @include mq("tablet", "phone-wide") {
+      max-width: 90%;
+      margin-left: -5px;
+    }
+
+    @include mq("phone-wide", "phone") {
+      margin-left: 10px;
+      margin-top: 26px;
+      max-width: 90%;
+    }
+
+    @include mq("phone") {
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  &__images {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    @include mq("phone-wide", "phone") {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    @include mq("phone") {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-item {
+      position: relative;
+      object-position: center bottom;
+      max-width: 848px;
+
+      @include mq("desktop-wide", "desktop") {
+        max-width: 619px;
+      }
+
+      @include mq("desktop", "tablet-wide") {
+        max-width: 462px;
+      }
+
+      @include mq("tablet-wide", "tablet") {
+        max-width: 321px;
+      }
+
+      @include mq("tablet", "phone-wide") {
+        max-width: 351px;
+      }
+
+      @include mq("phone-wide", "phone") {
+        max-width: 259px;
+      }
+
+      @include mq("phone") {
+        max-width: 294px;
+      }
+
+      &--left {
+        margin-top: 32px;
+        left: -6.5%;
+
+        @include mq("desktop-wide", "desktop") {
+          margin-top: 29px;
+          left: -6%;
+        }
+
+        @include mq("desktop", "tablet") {
+          margin-top: 23px;
+        }
+
+        @include mq("tablet", "phone-wide") {
+          margin-top: 35px;
+          left: -12%;
+        }
+
+        @include mq("phone-wide", "phone") {
+          margin-top: 45px;
+          left: 0;
+        }
+
+        @include mq("phone") {
+          margin-top: 23px;
+          left: vw(320, 26);
+          right: auto;
+        }
+      }
+
+      &--right {
+        position: absolute;
+        top: -46%;
+        left: vw(2560, 627);
+
+        @include mq("desktop-wide", "desktop") {
+          top: -50%;
+          left: vw(1920, 483);
+        }
+
+        @include mq("desktop", "tablet-wide") {
+          top: -45%;
+          left: vw(1366, 317);
+        }
+
+        @include mq("tablet-wide", "tablet") {
+          top: -60%;
+          left: vw(1024, 258);
+        }
+
+        @include mq("tablet", "phone-wide") {
+          top: -65%;
+          left: vw(640, 246);
+        }
+
+        @include mq("phone-wide", "phone") {
+          top: -3.5%;
+          left: vw(440, 187);
+        }
+
+        @include mq("phone") {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+footer.baseFooter
+  .baseFooter__container
+    .baseFooter__level.baseFooter__level--first
+      .baseFooter__menu
+        nuxt-link.baseFooter__menuLink(to= "") Условия Эксплуатации
+        nuxt-link.baseFooter__menuLink(to= "") Политика конфиденциальности
+        nuxt-link.baseFooter__menuLink(to= "") Магазин
+
+      .baseFooter__info
+        .baseFooter__social
+          a.baseFooter__socialItem(href="#", title="", target="_blank", rel="noopener noreferrer nofollow", aria-label="twitter")
+            svg
+              use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-twitter`")
+          a.baseFooter__socialItem(href="#", title="", target="_blank", rel="noopener noreferrer nofollow", aria-label="vk")
+            svg
+              use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-vk`")
+          a.baseFooter__socialItem(href="#", title="", target="_blank", rel="noopener noreferrer nofollow", aria-label="facebook")
+            svg
+              use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-facebook`")
+          a.baseFooter__socialItem(href="#", title="", target="_blank", rel="noopener noreferrer nofollow", aria-label="instagram")
+            svg
+              use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-instagram`")
+          a.baseFooter__socialItem(href="#", title="", target="_blank", rel="noopener noreferrer nofollow", aria-label="youtube")
+            svg
+              use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-youtube`")
+
+        nuxt-link.baseFooter__logotype(v-if="$route.path !== '/'", to="/")
+          img(src="/assets/logo.png", alt="logo")
+        .baseFooter__logotype(v-else)
+          img(src="/assets/logo.png", alt="logo")
+
+    .baseFooter__level.baseFooter__level--last
+      p.baseFooter__text Copyright
+      p.baseFooter__text Разработано в&nbsp;
+        a(href="#", target="_blank", rel="noopener noreferrer nofollow", aria-label="")

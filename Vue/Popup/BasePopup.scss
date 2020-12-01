@@ -1,0 +1,85 @@
+@import "~/assets/styles/settings.scss";
+
+.basePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: z("modal");
+
+  &__overlay {
+    background-color: $bg-insert;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    text-align: center;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      width: 0;
+    }
+  }
+
+  &__scroll {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-top: 55px;
+    padding-bottom: 55px;
+
+    @include mq("phone") {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &.popup-enter-active {
+    transition: opacity 0.3s ease;
+
+    .basePopup__scroll {
+      transition: opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s;
+    }
+  }
+
+  &.popup-leave-active {
+    transition: opacity 0.3s ease 0.3s;
+
+    .basePopup__scroll {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  }
+
+  &.popup-enter {
+    opacity: 0;
+
+    .basePopup__scroll {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  }
+
+  &.popup-leave-to {
+    opacity: 0;
+
+    .basePopup__scroll {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  }
+}

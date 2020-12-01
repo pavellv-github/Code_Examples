@@ -1,0 +1,6 @@
+.ratingStar
+  fieldset.ratingStar__fieldset(:class="{'ratingStar__fieldset--small': small}")
+    label(v-for="(item, index) in list", :title="item.title", :class="{'ratingStar__label--checked': item.isChecked}")
+      input(type="radio", name="rating", :value="item.value",  @change="inputChange(item.value)", ref="inputs")
+      svg
+        use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#icon-star`")

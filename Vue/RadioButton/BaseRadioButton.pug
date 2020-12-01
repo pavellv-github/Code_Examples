@@ -1,0 +1,14 @@
+label.baseRadioButton(:class="{'baseRadioButton--error': errors.has(name), 'baseRadioButton--disabled': disabled }",)
+  input.baseRadioButton__field(
+    :type="type"
+    :name="name"
+    :checked="isChecked"
+    :disabled="disabled"
+    v-validate="validate",
+    @change="onChange"
+  )
+
+  span.baseRadioButton__custom
+    .baseRadioButton__icon
+  span.baseRadioButton__text
+    slot

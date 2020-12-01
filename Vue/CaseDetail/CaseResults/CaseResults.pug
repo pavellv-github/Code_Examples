@@ -1,0 +1,38 @@
+.caseResults
+  h2.caseResults__title Результаты
+  CaseTabs.caseResults__tabs(@change="onTabChange")
+    CaseTabsItem(name="bussines", title="Бизнес-эффект", :isSelected="activeTab==='bussinesEffect'")
+      transition-group(name="fade", tag="div")
+        .caseResults__container(key="true")
+          .caseResults__slider
+            BaseSlider(:items="results.bussinesEffect")
+              .swiper-slide.baseSlider__slide(ref="slide", v-for="item in results.bussinesEffect", :key="item.description")
+                InfoCard(
+                  :value="item.value",
+                  :valueText="item.valueText",
+                  :description="item.description"
+                )
+
+    CaseTabsItem(name="social", title="Социальный эффект", :isSelected="activeTab==='socialEffect'")
+      transition-group(name="fade", tag="div")
+        .caseResults__container(key="true")
+          .caseResults__slider
+            BaseSlider(:items="results.socialEffect")
+              .swiper-slide.baseSlider__slide(ref="slide", v-for="item in results.socialEffect", :key="item.text")
+                InfoCard(:text="item.text")
+
+    CaseTabsItem(name="image", title="Имиджевый эффект", :isSelected="activeTab==='imageEffect'")
+      transition-group(name="fade", tag="div")
+        .caseResults__container(key="true")
+          .caseResults__slider
+            BaseSlider(:items="results.imageEffect")
+              .swiper-slide.baseSlider__slide(ref="slide", v-for="item in results.imageEffect", :key="item.text")
+                InfoCard(:text="item.text")
+
+    CaseTabsItem(name="additional", title="Дополнительные результаты", :isSelected="activeTab==='additionalResults'")
+      transition-group(name="fade", tag="div")
+        .caseResults__container(key="true")
+          .caseResults__slider
+            BaseSlider(:items="results.additionalResults")
+              .swiper-slide.baseSlider__slide(ref="slide", v-for="item in results.additionalResults", :key="item.text")
+                InfoCard(:text="item.text")

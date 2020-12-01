@@ -1,0 +1,41 @@
+@import "~/assets/styles/settings.scss";
+
+.assetsBar {
+  width: 17.3vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid $passive;
+  background-color: $bg-insert;
+  // background-color: $base;
+  z-index: 2;
+
+  @include mq("tablet-wide", "tablet") {
+    width: 22%;
+  }
+
+  @include mq("tablet", "phone") {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 20px;
+    width: 57px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+  }
+
+  @include mq("phone") {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 5px;
+    width: 50px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+  }
+}

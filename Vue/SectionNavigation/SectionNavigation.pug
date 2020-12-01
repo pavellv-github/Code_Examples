@@ -1,0 +1,6 @@
+.sectionNavigation
+  .swiper-container.sectionNavigation__container(ref= 'container')
+    .swiper-wrapper.sectionNavigation__scroll(ref= 'scroll')
+      .swiper-slide.sectionNavigation__item(v-for="(item, index) in dataItems", :key="item.id", :data-id= "index", :class="{ 'sectionNavigation__item--active': index === activeId}")
+        nuxt-link(:to= "{ path: localePath(getRouteBaseName()), query: { filter: item.code, page: '1', search: $route.query.search}}", @click.native= "clickItem") {{ item.name }}
+      .sectionNavigation__line(ref= 'line')

@@ -1,0 +1,23 @@
+section.caseTechnology
+  .caseTechnology__content
+    svg.caseTechnology__grid(viewBox="0 0 1442 850", fill="none", xmlns="http://www.w3.org/2000/svg")
+      path(stroke="#241555", stroke-width="2", d="M0 65.99h1442M61 850V0M295 850V0M529 850V0M985 850V0M757 850V0M1213 850V0M178 850V0M412 850V0M646 850V0M1102 850V0M874 850V0M1330 850V0M119 850V0M354 850V0M588 850V0M1044 850V0M815 850V0M1271 850V0M237 850V0M471 850V0M705 850V0M1161 850V0M932 850V0M1388 850V0M0 308.69h1442M0 494.284h1442M0 187.889h1442M0 429.491h1442M0 615.085h1442M0 129.685h1442M0 372.385h1442M0 557.979h1442M0 250.486h1442M0 674.388h1442M0 729.297h1442M0 782.01h1442")
+    .caseTechnology__wrapper
+      .caseTechnology__title Применяемые технологии
+      p.caseTechnology__text.caseTechnology__mt В проекте используются решения:
+      ul.caseTechnology__list
+        li.caseTechnology__item
+          p.caseTechnology__text Yandex SpeechKit для синтеза речи
+        li.caseTechnology__item
+          p.caseTechnology__text AI-библиотека Speech-to-Text Google для распознавания речи
+        li.caseTechnology__item
+          p.caseTechnology__text ASR-система интеграции правил ведения диалогов для бесед робота с кандидатом по гибким сценариям
+      p.caseTechnology__text.caseTechnology__mt Voximplant объединяет технологии с телефонией, сайтом и CRM-системой в единую систему. Ответы транскрибируются и заносятся в карточку кандидата.
+      p.caseTechnology__text.caseTechnology__mt--md.caseTechnology__view Посмотрите, как это работает на
+        button.caseTechnology__text.caseTechnology__button(type="button", @click="isShow = true") блок-схеме.
+    transition(name="fade")
+      .caseTechnology__popup(v-if="isShow")
+        .caseTechnology__overlay(@click="isShow = false")
+        .caseTechnology__body
+          button.caseTechnology__close(type="button", @click="isShow = false")
+          img.caseTechnology__image(src="/assets/content/case-detail/popup-tech.svg")

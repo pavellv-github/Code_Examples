@@ -1,0 +1,6 @@
+.sectionHeader
+  span.sectionHeader__subtitle(v-if= 'header.subtitle') {{ header.subtitle }}
+  h1.sectionHeader__title(v-if= 'header.title', v-html= "header.title")
+  span.sectionHeader__date(v-if= 'header.date !== undefined') {{ header.date }}
+  slot
+  p.sectionHeader__description(v-if= 'header.description !== undefined') {{ header.description }}

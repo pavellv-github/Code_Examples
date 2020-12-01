@@ -1,0 +1,20 @@
+.cardEvents(v-if= '!stub', :class="{ 'cardEvents--big' : isLarge }")
+  BasePicture.cardEvents__picture
+    source(v-for="source in sources", :key="source.id", srcset="/content/not-available.svg", :data-src="source.SRCSET", v-bind="{'srcset': source.SRCSET, 'media': (source.SIZE !== undefined && source.SIZE !== null) ? `(max-width: ${source.SIZE}px)` : undefined, 'type': (source.TYPE !== undefined) ? `image/${source.TYPE}` : undefined}")
+    img.cardEvents__pictureSource(src= '/content/not-available.svg', :data-src='src', :alt='title')
+  .cardEvents__container
+    .cardEvents__text
+      p.cardEvents__description {{ anons }}
+      .cardEvents__left
+        p.cardEvents__city {{ city }}
+        p.cardEvents__seat {{ seatsInfo }}
+      .cardEvents__right
+        p.cardEvents__day {{ day }}
+        p.cardEvents__month {{ month }}
+    BaseButton.cardEvents__button(:isTransparent="!isLarge", :to="to") {{ button }}
+
+nuxt-link.cardEventsStub(v-else, :to= 'stubElement.link')
+  svg.cardEventsStub__icon
+    use(:xlink:href="`${$store.state.ModuleBase.svgSprite}#stub`")
+  p.cardEventsStub__frame
+    span.cardEventsStub__link {{ stubElement.text }}

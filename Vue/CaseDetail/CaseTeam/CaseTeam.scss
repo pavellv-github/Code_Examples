@@ -1,0 +1,244 @@
+.caseTeam {
+  background: #1a193a;
+  text-align: center;
+  padding: 160px 0;
+
+  @include mq("desktop", "desktop-small") {
+    padding: 84px 0;
+  }
+
+  @include mq("desktop-small", "tablet") {
+    padding: 76px 0;
+  }
+
+  @include mq("tablet", "tablet-small") {
+    padding: 80px 0;
+  }
+
+  @include mq("tablet-small", "phone") {
+    padding: 85px 0;
+  }
+
+  @include mq("phone") {
+    padding: 45px 0;
+  }
+
+  &__title {
+    font-weight: 300;
+    color: $violet_3;
+    font-size: 45px;
+    line-height: 65px;
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 35px;
+      line-height: 50px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 34px;
+      line-height: 40px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.01em;
+    color: $violet_4;
+    margin: 19px auto 0;
+    max-width: 75%;
+
+    @include mq("desktop", "desktop-small") {
+      margin-top: 1px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 12px;
+      line-height: 20px;
+      margin-top: 1px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 14px;
+      line-height: 22px;
+      margin-top: 12px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 12px;
+      line-height: 20px;
+      max-width: 90%;
+      margin-top: 5px;
+    }
+  }
+
+  &__items {
+    margin: 90px auto 0;
+    max-width: 1200px;
+
+    @include mq("desktop", "desktop-small") {
+      max-width: 916px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      max-width: 850px;
+      margin-top: 50px;
+    }
+
+    @include mq("tablet") {
+      max-width: 768px;
+      margin-top: 28px;
+    }
+
+    @include mq("tablet-small") {
+      max-width: 100%;
+      margin-top: 30px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    padding-top: 10px;
+
+    &:nth-child(even) {
+      margin-left: auto;
+      margin-top: -200px;
+
+      @include mq("tablet", "tablet-small") {
+        margin-bottom: -100px;
+      }
+
+      @include mq("tablet-small") {
+        margin-top: 0;
+      }
+    }
+
+    @include mq("tablet", "tablet-small") {
+      width: 350px;
+      height: 350px;
+    }
+
+    @include mq("tablet-small") {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto 50px;
+    }
+
+    @include mq("phone") {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__itemName {
+    position: relative;
+    z-index: 3;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 36px;
+    color: #edecfd;
+    max-width: (29500% / 400);
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 26px;
+      line-height: 30px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 24px;
+      line-height: 28px;
+      max-width: 280px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 22px;
+      line-height: 26px;
+      max-width: 240px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 18px;
+      line-height: 20px;
+      max-width: 200px;
+    }
+  }
+
+  &__itemPosition {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    color: #6e5ede;
+    margin-top: 6px;
+    max-width: (29500% / 400);
+
+    @include mq("desktop", "desktop-small") {
+      font-size: 16px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      font-size: 16px;
+      max-width: 280px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      font-size: 14px;
+      line-height: 20px;
+      max-width: 240px;
+    }
+
+    @include mq("tablet-small") {
+      font-size: 12px;
+      line-height: 20px;
+      max-width: 200px;
+    }
+  }
+
+  & &__itemBubble {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include mq("desktop", "desktop-small") {
+      width: 850px;
+      height: 850px;
+    }
+
+    @include mq("desktop-small", "tablet") {
+      width: 830px;
+      height: 830px;
+    }
+
+    @include mq("tablet", "tablet-small") {
+      width: 700px;
+      height: 700px;
+    }
+
+    @include mq("tablet-small") {
+      width: 600px;
+      height: 600px;
+    }
+  }
+}
