@@ -1,0 +1,28 @@
+@import 'Assets/common.scss';
+
+.score {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font: normal 15px/30px $SB;
+    color: $white;
+  }
+
+  &__numbers {
+    font: normal 34px/30px $SB;
+    color: $white;
+    margin-top: 10px;
+  }
+
+  &__upslope {
+    font: normal 15px/18px $SB;
+    color: $grey_3;
+    margin-top: 10px;
+    letter-spacing: 0.01em;
+
+    span {
+      color: $green_1;
+    }
+  }
+}
